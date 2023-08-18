@@ -1,0 +1,32 @@
+server:
+  port: 9011
+  servlet:
+    context-path: /eureka
+
+eureka:
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+    enable-self-preservation: false
+  instance:
+    hostname: http://127.0.0.1
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9012/eureka-2/
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+  security:
+    enabled: false
+  endpoint:
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: false
+    diskspace:
+      enabled: true
